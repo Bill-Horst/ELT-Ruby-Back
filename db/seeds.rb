@@ -252,56 +252,86 @@
 #   ]
 # )
 # ====================================================================================================
-# Tag.delete_all
-# Gameidea.delete_all
-#
-# gi1 = Gameidea.create(
-#   {
-#     title: 'Fruit Basket',
-#     body: 'Kids sit around in a circle and you call a fruit and if they have the fruit, they get up and switch chairs.',
-#     mingradelevel: 0,
-#     maxgradelevel: 5,
-#     mintime: 10,
-#     maxtime: 30,
-#     minstudentcount: 10,
-#     maxstudentcount: 30,
-#     materials: 'Chairs, flashcards, small vocab cards'
-#   }
-# )
-# gi2 = Gameidea.create(
-#   {
-#     title: 'Flyswatter Game',
-#     body: 'Put vocab words on blackboard. Two kids take a flyswatter each. You call out the words. They try to hit the words with the flyswatter. First kid to hit the word gets a point for his/her team.',
-#     mingradelevel: 4,
-#     maxgradelevel: 9,
-#     mintime: 10,
-#     maxtime: 30,
-#     minstudentcount: 4,
-#     maxstudentcount: 20,
-#     materials: 'Flashcards, 2 flyswatters'
-#   }
-# )
-# gi3 = Gameidea.create(
-#   {
-#     title: 'Card Trading Game',
-#     body: 'Use the vocab cards <a>here</a>. Each kid gets three cards. Whole group stands and walks around. Kids look for partners. They RPS. Winner asks 3 questions. Loser answers them based on what is written on card. Winner gets one chance to guess. If winner guesses, loser gives winner the card. Else nothing happens. Pair dispurses and finds another partner to RPS and start again.',
-#     mingradelevel: 5,
-#     maxgradelevel: 9,
-#     mintime: 15,
-#     maxtime: 35,
-#     minstudentcount: 10,
-#     maxstudentcount: 100,
-#     materials: '<a>Cards</a>'
-#   }
-# )
-# Tag.create(
-#   [
-#     {label: 'speaking', gameidea_id: gi1.id},
-#     {label: 'listening', gameidea_id: gi1.id},
-#     {label: 'listening', gameidea_id: gi2.id},
-#     {label: 'speaking', gameidea_id: gi3.id},
-#     {label: 'listening', gameidea_id: gi3.id},
-#     {label: 'reading', gameidea_id: gi3.id}
-#   ]
-# )
+Tag.delete_all
+Gameidea.delete_all
+
+gi1 = Gameidea.create(
+  {
+    title: 'Fruit Basket',
+    body: 'Kids sit around in a circle and you call a fruit and if they have the fruit, they get up and switch chairs.',
+    mingradelevel: 0,
+    maxgradelevel: 5,
+    mintime: 10,
+    maxtime: 30,
+    minstudentcount: 10,
+    maxstudentcount: 30,
+    materials: 'Chairs, flashcards, small vocab cards'
+  }
+)
+gi2 = Gameidea.create(
+  {
+    title: 'Flyswatter Game',
+    body: 'Put vocab words on blackboard. Two kids take a flyswatter each. You call out the words. They try to hit the words with the flyswatter. First kid to hit the word gets a point for his/her team.',
+    mingradelevel: 4,
+    maxgradelevel: 9,
+    mintime: 10,
+    maxtime: 30,
+    minstudentcount: 4,
+    maxstudentcount: 20,
+    materials: 'Flashcards, 2 flyswatters'
+  }
+)
+gi3 = Gameidea.create(
+  {
+    title: 'Card Trading Game',
+    body: 'Use the vocab cards <a>here</a>. Each kid gets three cards. Whole group stands and walks around. Kids look for partners. They RPS. Winner asks 3 questions. Loser answers them based on what is written on card. Winner gets one chance to guess. If winner guesses, loser gives winner the card. Else nothing happens. Pair dispurses and finds another partner to RPS and start again.',
+    mingradelevel: 5,
+    maxgradelevel: 9,
+    mintime: 15,
+    maxtime: 35,
+    minstudentcount: 10,
+    maxstudentcount: 100,
+    materials: '<a>Cards</a>'
+  }
+)
+gi4 = Gameidea.create(
+  {
+    title: 'RPS Game',
+    body: 'Kids line up in two lines. Front of line is at front of room. You set up a line of vocab cards on blackboard. First kid from each team touches card and says word and goes on to next card. When they meet, they RPS. Winner continues, loser goes to back of line. When one student gets to end, he/she gets a point for his/her team.',
+    mingradelevel: 3,
+    maxgradelevel: 7,
+    mintime: 10,
+    maxtime: 25,
+    minstudentcount: 6,
+    maxstudentcount: 30,
+    materials: 'Flashcards'
+  }
+)
+gi5 = Gameidea.create(
+  {
+    title: 'Monopoly',
+    body: 'Use <a>this</a> board and let kids roll dice and play like Monopoly. Follow the instructions as they go.',
+    mingradelevel: 1,
+    maxgradelevel: 9,
+    mintime: 10,
+    maxtime: 30,
+    minstudentcount: 2,
+    maxstudentcount: 100,
+    materials: '<a>Game board</a>, dice, game piece'
+  }
+)
+Tag.create(
+  [
+    {label: 'speaking', gameidea_id: gi1.id},
+    {label: 'listening', gameidea_id: gi1.id},
+    {label: 'listening', gameidea_id: gi2.id},
+    {label: 'speaking', gameidea_id: gi3.id},
+    {label: 'listening', gameidea_id: gi3.id},
+    {label: 'reading', gameidea_id: gi3.id},
+    {label: 'speaking', gameidea_id: gi4.id},
+    {label: 'speaking', gameidea_id: gi5.id},
+    {label: 'listening', gameidea_id: gi5.id},
+    {label: 'reading', gameidea_id: gi5.id}
+  ]
+)
 # ====================================================================================================
