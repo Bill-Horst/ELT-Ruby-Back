@@ -13,8 +13,6 @@ class ProblemsController < ApplicationController
     @problem = @problem.to_json(:include => :answers)
 
     render json: @problem
-
-
   end
 
   # POST /problems

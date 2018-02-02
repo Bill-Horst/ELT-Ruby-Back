@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180127224137) do
+ActiveRecord::Schema.define(version: 20180202013849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,11 +24,34 @@ ActiveRecord::Schema.define(version: 20180127224137) do
     t.index ["problem_id"], name: "index_answers_on_problem_id"
   end
 
+  create_table "gameideas", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "mingradelevel"
+    t.integer "maxgradelevel"
+    t.integer "mintime"
+    t.integer "maxtime"
+    t.integer "minstudentcount"
+    t.integer "maxstudentcount"
+    t.text "materials"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "problems", force: :cascade do |t|
     t.string "statement"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "label"
+    t.bigint "gameidea_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gameidea_id"], name: "index_tags_on_gameidea_id"
+  end
+
   add_foreign_key "answers", "problems"
+  add_foreign_key "tags", "gameideas"
 end
