@@ -48,6 +48,6 @@ class ProblemsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def problem_params
-    params.require(:problem).permit(:statement)
+    params.require(:problem).permit(:statement, :id, :created_at, :updated_at, answers_attributes: [:problem_id, :statement, :correct, :id, :created_at, :updated_at])
   end
 end
