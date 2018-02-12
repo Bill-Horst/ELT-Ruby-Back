@@ -3,7 +3,7 @@ class GameideasController < ApplicationController
 
   # GET /gameideas
   def index
-    @gameideas = Gameidea.all
+    @gameideas = Gameidea.all.to_json(:include => :tags)
 
     render json: @gameideas
   end
